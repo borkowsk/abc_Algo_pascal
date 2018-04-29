@@ -1,0 +1,37 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>program</B></FONT>&nbsp;ZmienneNapisy;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>const</B></FONT>&nbsp;StałaNapisowa=<FONT COLOR="#C000C0">'12345678901234567890'</FONT>;<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;afc:<FONT COLOR="#0000C0"><B>array</B></FONT>[0..1023]&nbsp;<FONT COLOR="#0000C0"><B>of</B></FONT>&nbsp;<FONT COLOR="#A00000">char</FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;c:<FONT COLOR="#A00000">char</FONT>;<br>
+&nbsp;&nbsp;&nbsp;i:<FONT COLOR="#A00000">integer</FONT>;<br>
+&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;s1:<FONT COLOR="#0000C0"><B>string</B></FONT>[10];&nbsp;<br>
+&nbsp;&nbsp;&nbsp;s2:<FONT COLOR="#0000C0"><B>string</B></FONT>[255];&nbsp;<br>
+&nbsp;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;c:=<FONT COLOR="#C000C0">'A'</FONT>&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;<FONT COLOR="#C000C0">'z'</FONT>&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT><br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;afc[<FONT COLOR="#A00000">ord</FONT>(c)-<FONT COLOR="#A00000">ord</FONT>(<FONT COLOR="#C000C0">'A'</FONT>)]:=c;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;i:=0&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;<FONT COLOR="#A00000">ord</FONT>(<FONT COLOR="#C000C0">'z'</FONT>)-<FONT COLOR="#A00000">ord</FONT>(<FONT COLOR="#C000C0">'A'</FONT>)&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">write</FONT>(afc[i]);&nbsp;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;s1:=<FONT COLOR="#C000C0">'Tralalala'</FONT>;&nbsp;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;s2:=StałaNapisowa;<br>
+&nbsp;&nbsp;s2:=s2+StałaNapisowa+StałaNapisowa+StałaNapisowa;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(s1);<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(s2);<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

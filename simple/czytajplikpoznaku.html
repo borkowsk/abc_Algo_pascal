@@ -1,0 +1,28 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;ListFile;&nbsp;<br>
+<FONT COLOR="#008000">{Wypisywanie&nbsp;pliku&nbsp;tekstowego&nbsp;na&nbsp;konsole}</FONT><br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;plik:<FONT COLOR="#A00000">text</FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;c:<FONT COLOR="#A00000">char</FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;nazwa:<FONT COLOR="#0000C0"><B>string</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Podaj&nbsp;nazwę&nbsp;pliku&nbsp;do&nbsp;wypisania:'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">readln</FONT>(nazwa);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Assign</FONT>(plik,nazwa);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Reset</FONT>(plik);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'------------------------------'</FONT>);<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>while</B></FONT>&nbsp;<FONT COLOR="#0000C0"><B>not</B></FONT>&nbsp;<FONT COLOR="#A00000">eof</FONT>(plik)&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">read</FONT>(plik,c);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">write</FONT>(c);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Close</FONT>(plik);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,41 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;Podprogramy;&nbsp;<br>
+<FONT COLOR="#008000">{Przykłady&nbsp;podprogramów}</FONT><br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;a,b:<FONT COLOR="#A00000">real</FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Procedure</B></FONT>&nbsp;Szacher;&nbsp;<br>
+<FONT COLOR="#008000">{Procedura&nbsp;działająca&nbsp;na&nbsp;zmienną&nbsp;globalną}</FONT><br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+a:=a+1;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Function</B></FONT>&nbsp;Macher:<FONT COLOR="#A00000">real</FONT>;<br>
+<FONT COLOR="#008000">{Funkcja&nbsp;pobierająca&nbsp;dane&nbsp;ze&nbsp;zmiennej&nbsp;globalnej}</FONT><br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT><br>
+Macher:=a+9;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Function</B></FONT>&nbsp;XPlus9(x:<FONT COLOR="#A00000">real</FONT>):<FONT COLOR="#A00000">real</FONT>;<br>
+<FONT COLOR="#008000">{Funkcja&nbsp;}</FONT><br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT><br>
+XPlus9:=x+9;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+a:=10;<br>
+<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'A&nbsp;przed&nbsp;procedurą&nbsp;=&nbsp;'</FONT>,a:10:6);<br>
+Szacher;<br>
+<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'A&nbsp;po&nbsp;procedurze&nbsp;=&nbsp;'</FONT>,a:10:6);<br>
+b:=Macher;<br>
+<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Po&nbsp;funkcji&nbsp;A='</FONT>,a,<FONT COLOR="#C000C0">'&nbsp;B='</FONT>,b:10:6);<br>
+b:=XPlus9(a);<br>
+<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Po&nbsp;funkcji&nbsp;z&nbsp;parametrem&nbsp;B='</FONT>,b:10:6);<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

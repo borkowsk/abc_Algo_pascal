@@ -1,0 +1,49 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;Parametry_tablicowe;&nbsp;<br>
+<FONT COLOR="#008000">{Demonstracja&nbsp;przekazywania&nbsp;tablic<br>
+przez&nbsp;wartość&nbsp;i&nbsp;przez&nbsp;referencje}</FONT>&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>const</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;Last=21;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>type</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;TypTablicowy=<FONT COLOR="#0000C0"><B>array</B></FONT>[1..Last]&nbsp;<FONT COLOR="#0000C0"><B>of</B></FONT>&nbsp;<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>procedure</B></FONT>&nbsp;Wypisz(Tab:TypTablicowy;N:<FONT COLOR="#A00000">integer</FONT>);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;i:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;i:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;N&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">write</FONT>(Tab[i],<FONT COLOR="#C000C0">'&nbsp;'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>procedure</B></FONT>&nbsp;Jedynkuj(<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;Tab:TypTablicowy;N:<FONT COLOR="#A00000">integer</FONT>);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;i:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;i:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;N&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Tab[i]:=1;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>procedure</B></FONT>&nbsp;Zeruj(<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;Tab:TypTablicowy;N:<FONT COLOR="#A00000">integer</FONT>);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;i:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;i:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;N&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;Tab[i]:=0;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;Świat:TypTablicowy;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+Zeruj(Świat,Last);<br>
+Wypisz(Świat,Last);<br>
+Jedynkuj(Świat,10);<br>
+Wypisz(Świat,Last);<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,59 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>program</B></FONT>&nbsp;DeltaProceduralnie;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>type</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;wynikowa=<FONT COLOR="#0000C0"><B>array</B></FONT>[1..2]&nbsp;<FONT COLOR="#0000C0"><B>of</B></FONT>&nbsp;<FONT COLOR="#A00000">real</FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>procedure</B></FONT>&nbsp;RownKw(a,b,c:<FONT COLOR="#A00000">real</FONT>;<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;n:<FONT COLOR="#A00000">integer</FONT>;<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;x:wynikowa);&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;delta:<FONT COLOR="#A00000">real</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;delta:=b*b-4*a*c;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>If</B></FONT>&nbsp;delta&gt;0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[1]:=(-b-<FONT COLOR="#A00000">sqrt</FONT>(delta))/2*a;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[2]:=(-b+<FONT COLOR="#A00000">sqrt</FONT>(delta))/2*a;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n:=2;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>If</B></FONT>&nbsp;delta=0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[1]:=-b/2*a;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x[2]:=x[1];&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n:=1;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;n:=0;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;a,b,c:<FONT COLOR="#A00000">real</FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;ileP,i:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;pierwiastki:wynikowa;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Podaj&nbsp;parametry&nbsp;równania&nbsp;kwadratowego:'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'a?'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">readln</FONT>(a);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'b?'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">readln</FONT>(b);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'c?'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">readln</FONT>(c);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'czyli:&nbsp;y='</FONT>,a,<FONT COLOR="#C000C0">'x^2+'</FONT>,b,<FONT COLOR="#C000C0">'x+'</FONT>,c);&nbsp;<br>
+&nbsp;&nbsp;RownKw(a,b,c,ileP,pierwiastki);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'ma&nbsp;pierwiastków&nbsp;'</FONT>,ileP,<FONT COLOR="#C000C0">'&nbsp;:'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;i:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;ileP&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(pierwiastki[i]);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

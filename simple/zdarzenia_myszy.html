@@ -1,0 +1,36 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;ZdarzenieDemo;&nbsp;<br>
+<FONT COLOR="#008000">{Skopiowane&nbsp;z&nbsp;pomocy&nbsp;to&nbsp;programu&nbsp;Algo}</FONT><br>
+<FONT COLOR="#0000C0"><B>Var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;k,&nbsp;x,&nbsp;y:&nbsp;<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>Repeat</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Event</FONT>(k,&nbsp;x,&nbsp;y);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Write</FONT>(<FONT COLOR="#C000C0">'Czynność:&nbsp;'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>If</B></FONT>&nbsp;k=1&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Write</FONT>(<FONT COLOR="#C000C0">'klawiatura.&nbsp;'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>If</B></FONT>&nbsp;y=0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">WriteLn</FONT>(<FONT COLOR="#C000C0">'Wciśnięty&nbsp;klawisz&nbsp;sterujący.&nbsp;Kod&nbsp;'</FONT>,x)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>If</B></FONT>&nbsp;y=1&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">WriteLn</FONT>(<FONT COLOR="#C000C0">'Sterujący&nbsp;klawisz.&nbsp;Kod&nbsp;'</FONT>,x)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">WriteLn</FONT>(<FONT COLOR="#C000C0">'Widoczny&nbsp;klawisz.&nbsp;Znak&nbsp;'''</FONT>,<FONT COLOR="#A00000">chr</FONT>(x),<FONT COLOR="#C000C0">''''</FONT>)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>If</B></FONT>&nbsp;k=2&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">WriteLn</FONT>(<FONT COLOR="#C000C0">'mysz.&nbsp;Lewy&nbsp;przycisk.&nbsp;X='</FONT>,x,<FONT COLOR="#C000C0">'&nbsp;Y='</FONT>,y)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">WriteLn</FONT>(<FONT COLOR="#C000C0">'mysz.&nbsp;Mysz&nbsp;przemieszcza&nbsp;się:&nbsp;X='</FONT>,x,<FONT COLOR="#C000C0">'&nbsp;Y='</FONT>,y)&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>until</B></FONT>&nbsp;(k=1)&nbsp;<FONT COLOR="#0000C0"><B>and</B></FONT>&nbsp;(x=27);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+<br>
+<br>
+</FONT>
+</BODY>
+</HTML>

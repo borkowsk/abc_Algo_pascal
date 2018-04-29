@@ -1,0 +1,84 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>program</B></FONT>&nbsp;testzawijania;&nbsp;<br>
+<FONT COLOR="#008000">(*Program&nbsp;testuje&nbsp;"zawijany"&nbsp;dostęp&nbsp;do&nbsp;tablicy&nbsp;dla&nbsp;przypadku<br>
+typowego&nbsp;dla&nbsp;większości&nbsp;programów&nbsp;symulacyjnych&nbsp;czyli&nbsp;tablicy<br>
+indeksowanej&nbsp;od&nbsp;0&nbsp;jak&nbsp;i&nbsp;dla&nbsp;przypadków&nbsp;nietypowych...&nbsp;*)</FONT>&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>const</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;LiczbaPrób=500;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;tablica0_9:<FONT COLOR="#0000C0"><B>array</B></FONT>[0..9]&nbsp;<FONT COLOR="#0000C0"><B>of</B></FONT>&nbsp;<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;tablica1_10:<FONT COLOR="#0000C0"><B>array</B></FONT>[1..10]&nbsp;<FONT COLOR="#0000C0"><B>of</B></FONT>&nbsp;<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;tablica55_65:<FONT COLOR="#0000C0"><B>array</B></FONT>[55..65]&nbsp;<FONT COLOR="#0000C0"><B>of</B></FONT>&nbsp;<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#008000">{TRZY&nbsp;ROZWIĄZANIA&nbsp;PROBLEMU&nbsp;ZAWIJANIA&nbsp;INDEKSÓW}</FONT><br>
+<FONT COLOR="#0000C0"><B>function</B></FONT>&nbsp;nIndeks0(isurowy,size:<FONT COLOR="#A00000">integer</FONT>):<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#008000">{Zawijanie&nbsp;indeksu&nbsp;do&nbsp;tablicy:&nbsp;}</FONT>&nbsp;<br>
+<FONT COLOR="#008000">{*&nbsp;o&nbsp;rozmiarze&nbsp;size&nbsp;i&nbsp;indeksach&nbsp;startujących&nbsp;od&nbsp;0&nbsp;}</FONT>&nbsp;<br>
+<FONT COLOR="#008000">{*&nbsp;dozwolony&nbsp;zakres&nbsp;indeksów&nbsp;w&nbsp;ALGO&nbsp;to&nbsp;-size.."b.dużo"&nbsp;}</FONT>&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;nIndeks0:=(isurowy+size)&nbsp;<FONT COLOR="#0000C0"><B>mod</B></FONT>&nbsp;size;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>function</B></FONT>&nbsp;nIndeks1(isurowy,last:<FONT COLOR="#A00000">integer</FONT>):<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#008000">{Zawijanie&nbsp;indeksu&nbsp;do&nbsp;tablicy&nbsp;o&nbsp;&nbsp;indeksach&nbsp;od&nbsp;1&nbsp;do&nbsp;Last&nbsp;}</FONT>&nbsp;<br>
+<FONT COLOR="#008000">{Dozwolony&nbsp;zakres&nbsp;surowych&nbsp;indeksów&nbsp;w&nbsp;ALGO&nbsp;to&nbsp;-(Last-1)..2*Last&nbsp;}</FONT>&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;isurowy&gt;Last&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;nIndeks1:=isurowy-Last&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;isurowy&lt;1&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nIndeks1:=Last+isurowy&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nIndeks1:=isurowy;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>function</B></FONT>&nbsp;nIndeksDowolny(isurowy,początek,koniec:<FONT COLOR="#A00000">integer</FONT>):<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#008000">{Zawijanie&nbsp;indeksu&nbsp;do&nbsp;tablicy&nbsp;o&nbsp;dowolnym&nbsp;zakresie&nbsp;indeksów}</FONT><br>
+<FONT COLOR="#008000">{Dozwolony&nbsp;zakres&nbsp;surowego&nbsp;indeksu&nbsp;to&nbsp;początek-size.."b.dużo"}</FONT><br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;size:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;size:=koniec-początek+1;&nbsp;<FONT COLOR="#008000">{Obliczenie&nbsp;długości}</FONT><br>
+&nbsp;&nbsp;isurowy:=isurowy-początek;&nbsp;<FONT COLOR="#008000">{Przesuniecie&nbsp;surowego&nbsp;indeksu&nbsp;w&nbsp;stronę&nbsp;0}</FONT><br>
+&nbsp;&nbsp;nIndeksDowolny:=((isurowy+size)&nbsp;<FONT COLOR="#0000C0"><B>mod</B></FONT>&nbsp;size)+początek;<FONT COLOR="#008000">{Obliczenie&nbsp;nowego&nbsp;i&nbsp;przesuniecie&nbsp;spowrotem}</FONT>&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#008000">(*&nbsp;PROGRAM&nbsp;GŁÓWNY&nbsp;REALIZUJĄCY&nbsp;TESTY&nbsp;*)</FONT>&nbsp;&nbsp;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;i,S,N:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Test&nbsp;dla&nbsp;tablicy&nbsp;indeksowanej&nbsp;od&nbsp;0}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;i:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;LiczbaPrób&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S:=<FONT COLOR="#A00000">random</FONT>(50)-10;&nbsp;<FONT COLOR="#008000">{Losowanie&nbsp;także&nbsp;zprzed&nbsp;i&nbsp;zza&nbsp;tablicy}</FONT><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N:=nIndeks0(S,10);<FONT COLOR="#008000">{Poprawienie&nbsp;indeksów}</FONT>&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(S:4,<FONT COLOR="#C000C0">'-&gt;'</FONT>,N:4);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tablica0_9[N]:=1;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>;&nbsp;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Test&nbsp;dla&nbsp;tablicy&nbsp;indeksowanej&nbsp;od&nbsp;1}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;i:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;LiczbaPrób&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S:=<FONT COLOR="#A00000">random</FONT>(30)-9;&nbsp;<FONT COLOR="#008000">{Losowanie&nbsp;także&nbsp;sprzed&nbsp;i&nbsp;zza&nbsp;tablicy}</FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N:=nIndeks1(S,10);<FONT COLOR="#008000">{Poprawienie&nbsp;indeksów}</FONT>&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(S:4,<FONT COLOR="#C000C0">'-&gt;'</FONT>,N:4);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tablica1_10[N]:=1;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>;&nbsp;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Test&nbsp;dla&nbsp;tablicy&nbsp;indeksowanej&nbsp;dziwnie}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;i:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;LiczbaPrób&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;S:=45+<FONT COLOR="#A00000">random</FONT>(50);&nbsp;<FONT COLOR="#008000">{Losowanie&nbsp;także&nbsp;sprzed&nbsp;i&nbsp;zza&nbsp;tablicy}</FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;N:=nIndeksDowolny(S,55,65);<FONT COLOR="#008000">{Poprawienie&nbsp;indeksów}</FONT>&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(S:4,<FONT COLOR="#C000C0">'-&gt;'</FONT>,N:4);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;tablica55_65[N]:=1;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</BODY>
+</HTML>

@@ -1,0 +1,50 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;Delta;<br>
+<br>
+<FONT COLOR="#008000">{Przesyłam&nbsp;zaległe&nbsp;prace&nbsp;domowe.<br>
+Bardzo&nbsp;proszę&nbsp;o&nbsp;odpowiedź&nbsp;czy&nbsp;doszły.<br>
+&nbsp;<br>
+Pozdrawiam,<br>
+Magdalena&nbsp;Włodarczyk&nbsp;<br>
++&nbsp;Słomińska,&nbsp;Kudra<br>
+<br>
+}</FONT><br>
+<br>
+<FONT COLOR="#0000C0"><B>Var</B></FONT>&nbsp;Pierwiastek1,Pierwiastek2,a,b,c,delta&nbsp;:&nbsp;<FONT COLOR="#A00000">real</FONT>;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT><br>
+<FONT COLOR="#A00000">WriteLn</FONT>(&nbsp;<FONT COLOR="#C000C0">'Wprowadz&nbsp;kolejno&nbsp;liczby&nbsp;do&nbsp;rownania&nbsp;Ax2&nbsp;+&nbsp;Bx&nbsp;+&nbsp;C&nbsp;=&nbsp;0'</FONT>&nbsp;);<br>
+<FONT COLOR="#A00000">Write</FONT>&nbsp;(<FONT COLOR="#C000C0">'a&nbsp;=&nbsp;'</FONT>);<br>
+<FONT COLOR="#A00000">ReadLn</FONT>(&nbsp;a&nbsp;);<br>
+<FONT COLOR="#A00000">Write</FONT>&nbsp;(<FONT COLOR="#C000C0">'b&nbsp;=&nbsp;'</FONT>);<br>
+<FONT COLOR="#A00000">ReadLn</FONT>(&nbsp;b&nbsp;);<br>
+<FONT COLOR="#A00000">Write</FONT>&nbsp;(<FONT COLOR="#C000C0">'c&nbsp;=&nbsp;'</FONT>);<br>
+<FONT COLOR="#A00000">ReadLn</FONT>(&nbsp;c&nbsp;);<br>
+<br>
+delta&nbsp;:=&nbsp;(b*b)-(4*a*c);<br>
+<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;delta&nbsp;&lt;&nbsp;0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT><br>
+&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Writeln</FONT>(<FONT COLOR="#C000C0">'Rownanie&nbsp;'</FONT>,a:4:1,<FONT COLOR="#C000C0">'x2&nbsp;+&nbsp;'</FONT>,b:4:1,<FONT COLOR="#C000C0">'x&nbsp;+&nbsp;'</FONT>,c:4:1,<FONT COLOR="#C000C0">'&nbsp;=&nbsp;0&nbsp;nie&nbsp;ma&nbsp;rozwiazania'</FONT>)<br>
+<FONT COLOR="#0000C0"><B>else</B></FONT><br>
+&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;delta&nbsp;&gt;&nbsp;0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pierwiastek1&nbsp;:=&nbsp;(-b+<FONT COLOR="#A00000">sqrt</FONT>(delta))/(2*a);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pierwiastek2&nbsp;:=&nbsp;(-b-<FONT COLOR="#A00000">sqrt</FONT>(delta))/(2*a);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Writeln</FONT>(<FONT COLOR="#C000C0">'Rownanie&nbsp;'</FONT>,a:4:1,<FONT COLOR="#C000C0">'x2&nbsp;+&nbsp;'</FONT>,b:4:1,<FONT COLOR="#C000C0">'x&nbsp;+&nbsp;'</FONT>,c:4:1,<FONT COLOR="#C000C0">'&nbsp;=&nbsp;0&nbsp;ma&nbsp;2&nbsp;rowziazania'</FONT>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Writeln</FONT>(<FONT COLOR="#C000C0">'x1&nbsp;=&nbsp;'</FONT>,Pierwiastek1:4:1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Writeln</FONT>(<FONT COLOR="#C000C0">'x2&nbsp;=&nbsp;'</FONT>,Pierwiastek2:4:1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT><br>
+&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pierwiastek1&nbsp;:=&nbsp;(-b+<FONT COLOR="#A00000">sqrt</FONT>(delta))/(2*a);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Writeln</FONT>(<FONT COLOR="#C000C0">'Rownanie&nbsp;'</FONT>,a:4:1,<FONT COLOR="#C000C0">'x2&nbsp;+&nbsp;'</FONT>,b:4:1,<FONT COLOR="#C000C0">'x&nbsp;+&nbsp;'</FONT>,c:4:1,<FONT COLOR="#C000C0">'&nbsp;=&nbsp;0&nbsp;ma&nbsp;1&nbsp;rowziazanie'</FONT>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Writeln</FONT>(<FONT COLOR="#C000C0">'x1&nbsp;=&nbsp;'</FONT>,Pierwiastek1:4:1);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;<br>
+<FONT COLOR="#0000C0"><B>End</B></FONT>.<br>
+<br>
+</FONT>
+</BODY>
+</HTML>

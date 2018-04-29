@@ -1,0 +1,54 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;Grafiki;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>const</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;MaxX=300;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;MaxY=200;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>Var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;x,y:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Linia&nbsp;po&nbsp;przekątnej}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Line</FONT>(0,0,MaxX,MaxY);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Linia&nbsp;od&nbsp;końca&nbsp;poprzedniej&nbsp;do&nbsp;podanego&nbsp;punktu}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">LineTo</FONT>(0,MaxY);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Przesuniecie&nbsp;bez&nbsp;rysowania&nbsp;do&nbsp;podanego&nbsp;punktu}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">MoveTo</FONT>(MaxX&nbsp;<FONT COLOR="#0000C0"><B>div</B></FONT>&nbsp;2,MaxY&nbsp;<FONT COLOR="#0000C0"><B>div</B></FONT>&nbsp;2);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Odczytanie&nbsp;aktualnego&nbsp;polozenia&nbsp;kursora}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Coordinates</FONT>(x,y);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Wypisanie&nbsp;odczytanego&nbsp;połozenia&nbsp;}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">write</FONT>(x,<FONT COLOR="#C000C0">'&nbsp;'</FONT>,y);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Zmiana&nbsp;koloru&nbsp;rysowania&nbsp;na&nbsp;czerwony}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Pen</FONT>(1,255,0,0);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Zmiana&nbsp;koloru&nbsp;wypełniania&nbsp;na&nbsp;niebieski}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Brush</FONT>(1,0,0,255);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Zmiana&nbsp;koloru&nbsp;pisania&nbsp;na&nbsp;zielony}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">TextColor</FONT>(0,255,0);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Prostokąt}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Rectangle</FONT>(0,0,50,25);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">write</FONT>(<FONT COLOR="#C000C0">'Oto&nbsp;prostokąt'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Elipsa}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Ellipse</FONT>(MaxX-100,MaxY-50,MaxX,MaxY);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Pojedyncze&nbsp;punkty}</FONT><br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;x:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;MaxX&nbsp;<FONT COLOR="#0000C0"><B>div</B></FONT>&nbsp;2&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Point</FONT>(x*2,MaxY&nbsp;<FONT COLOR="#0000C0"><B>div</B></FONT>&nbsp;2);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Delay</FONT>(10)&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Zmiana&nbsp;koloru&nbsp;wypełniania&nbsp;na&nbsp;cyan}</FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Brush</FONT>(1,0,255,255);&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Ponowne&nbsp;wypełnienie&nbsp;prostokąta}</FONT><br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Fill</FONT>(10,10);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Zmiana&nbsp;parametrów&nbsp;wypisywania&nbsp;tekstu}</FONT><br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Font</FONT>(10,30,400);<br>
+&nbsp;&nbsp;<FONT COLOR="#008000">{Baner&nbsp;końcowy}</FONT><br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">MoveTo</FONT>(MaxX&nbsp;<FONT COLOR="#0000C0"><B>div</B></FONT>&nbsp;2-25,MaxY&nbsp;<FONT COLOR="#0000C0"><B>div</B></FONT>&nbsp;2-25);<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Write</FONT>(<FONT COLOR="#C000C0">'To&nbsp;już&nbsp;jest&nbsp;koniec...'</FONT>);<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

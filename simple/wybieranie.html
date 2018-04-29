@@ -1,0 +1,35 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;Wybieranie1;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;c:<FONT COLOR="#A00000">char</FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Podawaj&nbsp;znaki&nbsp;z&nbsp;klawiatury&nbsp;(q-wyjście):'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>repeat</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">read</FONT>(c);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>case</B></FONT>&nbsp;c&nbsp;<FONT COLOR="#0000C0"><B>of</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#C000C0">'a'</FONT>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Mała&nbsp;litera&nbsp;a'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#C000C0">'b'</FONT>,<FONT COLOR="#C000C0">'c'</FONT>,<FONT COLOR="#C000C0">'d'</FONT>,<FONT COLOR="#C000C0">'e'</FONT>,<FONT COLOR="#C000C0">'f'</FONT>,<FONT COLOR="#C000C0">'g'</FONT>,<FONT COLOR="#C000C0">'h'</FONT>,<FONT COLOR="#C000C0">'i'</FONT>:&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Inna&nbsp;mała&nbsp;litera'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#C000C0">'z'</FONT>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Mała&nbsp;litera&nbsp;z'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#C000C0">'A'</FONT>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Wielka&nbsp;litera&nbsp;A'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#C000C0">'Z'</FONT>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Wielka&nbsp;litera&nbsp;Z'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#C000C0">'q'</FONT>,<FONT COLOR="#C000C0">'Q'</FONT>:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Kończymy'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Coś&nbsp;innego...'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>until</B></FONT>&nbsp;<FONT COLOR="#A00000">UpperCase</FONT>(c)=<FONT COLOR="#C000C0">'Q'</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

@@ -1,0 +1,57 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;KoloroweKoła;&nbsp;<br>
+<FONT COLOR="#008000">{Losowo&nbsp;polozone&nbsp;i&nbsp;pokolorowane&nbsp;koła}</FONT>&nbsp;<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;width,height:<FONT COLOR="#A00000">integer</FONT>;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>procedure</B></FONT>&nbsp;wylosuj_kolor;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;r,g,b:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;r:=<FONT COLOR="#A00000">random</FONT>(256);&nbsp;<br>
+&nbsp;&nbsp;g:=<FONT COLOR="#A00000">random</FONT>(256);&nbsp;<br>
+&nbsp;&nbsp;b:=<FONT COLOR="#A00000">random</FONT>(256);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Pen</FONT>(1,r,g,b);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<br>
+<FONT COLOR="#0000C0"><B>procedure</B></FONT>&nbsp;wylosuj_wypełnienie;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;r,g,b:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;r:=<FONT COLOR="#A00000">random</FONT>(256);&nbsp;<br>
+&nbsp;&nbsp;g:=<FONT COLOR="#A00000">random</FONT>(256);&nbsp;<br>
+&nbsp;&nbsp;b:=<FONT COLOR="#A00000">random</FONT>(256);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Brush</FONT>(1,r,g,b);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>procedure</B></FONT>&nbsp;dodaj_koło;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;x,y,r:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;x:=<FONT COLOR="#A00000">random</FONT>(width);&nbsp;<br>
+&nbsp;&nbsp;y:=<FONT COLOR="#A00000">random</FONT>(height);&nbsp;<br>
+&nbsp;&nbsp;r:=<FONT COLOR="#A00000">random</FONT>(30);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Ellipse</FONT>(x-r,y-r,x+r,y+r);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'podaj&nbsp;długość&nbsp;i&nbsp;szerokość&nbsp;okna:'</FONT>);<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">readln</FONT>(width);<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">readln</FONT>(height);<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>While</B></FONT>&nbsp;<FONT COLOR="#A00000">true</FONT>&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wylosuj_kolor;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wylosuj_wypełnienie;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dodaj_koło;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

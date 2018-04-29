@@ -1,0 +1,56 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;PawieOczko;&nbsp;<br>
+<FONT COLOR="#008000">{Rysuje&nbsp;pawie&nbsp;oczko,&nbsp;a&nbsp;potem&nbsp;losowo&nbsp;zmienia&nbsp;mu&nbsp;kolory}</FONT>&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Const</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;Skok=10;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Procedure</B></FONT>&nbsp;wylosuj_wypełnienie;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;r,g,b:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;r:=<FONT COLOR="#A00000">random</FONT>(256);&nbsp;<br>
+&nbsp;&nbsp;g:=<FONT COLOR="#A00000">random</FONT>(256);&nbsp;<br>
+&nbsp;&nbsp;b:=<FONT COLOR="#A00000">random</FONT>(256);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Brush</FONT>(1,r,g,b);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Procedure</B></FONT>&nbsp;Narysuj(x,y,r,s:<FONT COLOR="#A00000">integer</FONT>);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>Var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;i:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>For</B></FONT>&nbsp;i:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;s&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wylosuj_wypełnienie;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Ellipse</FONT>(x-r+i*Skok,y-r+i*Skok*2,x+r-i*Skok,y+r);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Procedure</B></FONT>&nbsp;Zmień(x,y,r,s:<FONT COLOR="#A00000">integer</FONT>);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>Var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;i:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>For</B></FONT>&nbsp;i:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;s&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Delay</FONT>(50);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;wylosuj_wypełnienie;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Fill</FONT>(x,y-r+i*Skok*2+2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#008000">{Point(x,y-r+i*Skok*2+2);write('&nbsp;');}</FONT><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;Narysuj(150,150,150,10);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>While</B></FONT>&nbsp;<FONT COLOR="#0000C0"><B>not</B></FONT>&nbsp;<FONT COLOR="#A00000">IsEvent</FONT>&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Zmień(150,150,150,10);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

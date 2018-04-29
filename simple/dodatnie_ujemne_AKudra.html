@@ -1,0 +1,70 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#008000">{Anastazja&nbsp;Kudra}</FONT>&nbsp;<br>
+<FONT COLOR="#008000">{Nr&nbsp;indexu&nbsp;7100}</FONT>&nbsp;<br>
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;sumowanie_liczb_dodatnich_i_ujemnych;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;suma,&nbsp;<br>
+&nbsp;&nbsp;&nbsp;suma_dodatnich,&nbsp;suma_ujemnych,&nbsp;<br>
+&nbsp;&nbsp;&nbsp;dodatnie,&nbsp;ujemne,&nbsp;zera,&nbsp;<br>
+&nbsp;&nbsp;&nbsp;średnia_dod,&nbsp;średnia_uje,&nbsp;wartosc:<FONT COLOR="#A00000">real</FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;z,&nbsp;liczba:<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;suma_dodatnich:=0;&nbsp;<br>
+&nbsp;&nbsp;suma_ujemnych:=0;&nbsp;<br>
+&nbsp;&nbsp;dodatnie:=0;&nbsp;<br>
+&nbsp;&nbsp;ujemne:=0;&nbsp;<br>
+&nbsp;&nbsp;zera:=0;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>&nbsp;(<FONT COLOR="#C000C0">'Ile&nbsp;będzie&nbsp;liczb?'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">readln</FONT>(liczba);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>for</B></FONT>&nbsp;z:=1&nbsp;<FONT COLOR="#0000C0"><B>to</B></FONT>&nbsp;liczba&nbsp;<FONT COLOR="#0000C0"><B>do</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Podaj&nbsp;liczbę'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">readln</FONT>&nbsp;(wartosc);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;wartosc&gt;0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;dodatnie:=dodatnie+1;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suma_dodatnich:=suma_dodatnich+wartosc;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;wartosc&lt;0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ujemne:=ujemne+1;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suma_ujemnych:=suma_ujemnych+wartosc;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;wartosc=0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;zera:=zera+1;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>&nbsp;(<FONT COLOR="#C000C0">'Oto&nbsp;ile&nbsp;było&nbsp;liczb&nbsp;dodatnich&nbsp;'</FONT>,&nbsp;dodatnie:10:2);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>&nbsp;(<FONT COLOR="#C000C0">'Tu&nbsp;wyskakuje&nbsp;liczba&nbsp;ujemnych&nbsp;'</FONT>,&nbsp;ujemne:10:2);&nbsp;<br>
+<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;zera&gt;0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>&nbsp;(<FONT COLOR="#C000C0">'zer&nbsp;było'</FONT>,&nbsp;zera:10:2);&nbsp;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>&nbsp;(<FONT COLOR="#C000C0">'Suma&nbsp;liczb&nbsp;dodatnich&nbsp;wynosi&nbsp;'</FONT>,&nbsp;suma_dodatnich:10:2);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>&nbsp;(<FONT COLOR="#C000C0">'Suma&nbsp;liczb&nbsp;ujemnych&nbsp;wynosi&nbsp;'</FONT>,&nbsp;suma_ujemnych:10:2);&nbsp;<br>
+&nbsp;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;wartosc&lt;&gt;0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;dodatnie&lt;&gt;0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;średnia_dod:=suma_dodatnich/dodatnie;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">WriteLn</FONT>(<FONT COLOR="#C000C0">'Średnia&nbsp;liczb&nbsp;dodatnich&nbsp;to&nbsp;'</FONT>,średnia_dod:10:2);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;ujemne&lt;&gt;0&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;średnia_uje:=suma_ujemnych/ujemne;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">WriteLn</FONT>(<FONT COLOR="#C000C0">'Średnia&nbsp;liczb&nbsp;ujemnych&nbsp;to&nbsp;'</FONT>,średnia_uje:10:2);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Writeln</FONT>(<FONT COLOR="#C000C0">'Ach&nbsp;jaki&nbsp;fajny&nbsp;program...'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

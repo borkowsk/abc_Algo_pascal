@@ -1,0 +1,62 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;MyszDemo;&nbsp;<br>
+<FONT COLOR="#008000">{Program&nbsp;pozwala&nbsp;umieszczac&nbsp;koła&nbsp;klikaniem&nbsp;albo&nbsp;przesuwaniem/wleczeniem}</FONT><br>
+<FONT COLOR="#0000C0"><B>const</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;ZdarzenieKlawiatury=1;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;ZdarzenieLewyPrzycisk=2;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;ZdarzenieLewyWleczenie=3;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>procedure</B></FONT>&nbsp;assert(f:<FONT COLOR="#A00000">boolean</FONT>;s:<FONT COLOR="#0000C0"><B>string</B></FONT>);&nbsp;<br>
+<FONT COLOR="#008000">{Procedura&nbsp;przerywa&nbsp;program&nbsp;gdy&nbsp;warunek&nbsp;kontrolny&nbsp;nie&nbsp;jest&nbsp;spelniony}</FONT>&nbsp;<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>if</B></FONT>&nbsp;<FONT COLOR="#0000C0"><B>not</B></FONT>(f)&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Niespełniono&nbsp;warunku:&nbsp;'</FONT>,s);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Program&nbsp;zatrzymany&nbsp;awaryjnie'</FONT>,1/0);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#008000">{Trzeba&nbsp;dzielić&nbsp;przez&nbsp;0&nbsp;bo&nbsp;w&nbsp;ALGO&nbsp;nie&nbsp;ma&nbsp;'halt;'}</FONT><br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>procedure</B></FONT>&nbsp;ObsługaMyszy;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>Var</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;typ_zdarzenia,&nbsp;x,&nbsp;y,oldx,oldy:&nbsp;<FONT COLOR="#A00000">integer</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>Repeat</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">Event</FONT>(typ_zdarzenia,&nbsp;x,&nbsp;y);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>If</B></FONT>&nbsp;typ_zdarzenia&lt;&gt;ZdarzenieKlawiatury&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>Begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>If</B></FONT>&nbsp;typ_zdarzenia=ZdarzenieLewyPrzycisk&nbsp;<FONT COLOR="#0000C0"><B>then</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#008000">{WriteLn('mysz.&nbsp;Lewy&nbsp;przycisk.&nbsp;X=',x,'&nbsp;Y=',y)&nbsp;}</FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">pen</FONT>(1,0,0,0);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">ellipse</FONT>(x-5,y-5,x+5,y+5);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oldx:=x;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oldy:=y;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;assert(typ_zdarzenia=ZdarzenieLewyWleczenie,<FONT COLOR="#C000C0">'typ_zdarzenia=ZdarzenieLewyWleczenie'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#008000">{WriteLn('mysz.&nbsp;Mysz&nbsp;przemieszcza&nbsp;się:&nbsp;X=',x,'&nbsp;Y=',y);&nbsp;}</FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">pen</FONT>(1,255,255,255);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">ellipse</FONT>(oldx-5,oldy-5,oldx+5,oldy+5);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">pen</FONT>(1,0,0,0);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">ellipse</FONT>(x-5,y-5,x+5,y+5);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oldx:=x;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;oldy:=y;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>until</B></FONT>&nbsp;(typ_zdarzenia=ZdarzenieKlawiatury);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">Writeln</FONT>(<FONT COLOR="#C000C0">'Wciśniecie&nbsp;klawiatury&nbsp;przerywa&nbsp;obslugę'</FONT>);&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;ObsługaMyszy;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>

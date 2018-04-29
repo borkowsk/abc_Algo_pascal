@@ -1,0 +1,33 @@
+<HTML>
+<HEAD>
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=windows-1250">
+</HEAD>
+<BODY STYLE="FONT-FAMILY: Courier">
+<FONT COLOR="#0000C0"><B>Program</B></FONT>&nbsp;Kalkulator;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>var</B></FONT><br>
+&nbsp;&nbsp;&nbsp;liczba1,&nbsp;liczba2:<FONT COLOR="#A00000">real</FONT>;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;c,spacja:<FONT COLOR="#A00000">char</FONT>;&nbsp;<br>
+<br>
+<FONT COLOR="#0000C0"><B>begin</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'TO&nbsp;JEST&nbsp;MINI&nbsp;KALKULATOR&nbsp;-&nbsp;DZIAŁA&nbsp;DO&nbsp;PIERWSZEGO&nbsp;BŁĘDU&nbsp;:)'</FONT>);&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>repeat</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Podaj&nbsp;liczbę,&nbsp;znak&nbsp;operacji&nbsp;i&nbsp;drugą&nbsp;liczbę&nbsp;(w&nbsp;jednej&nbsp;linii&nbsp;oddzielone&nbsp;pojedynczymi&nbsp;spacjami):'</FONT>);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">read</FONT>(liczba1);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">read</FONT>(spacja);&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">read</FONT>(c);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">read</FONT>(spacja);&nbsp;&nbsp;&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">readln</FONT>(liczba2);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>case</B></FONT>&nbsp;c&nbsp;<FONT COLOR="#0000C0"><B>of</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#C000C0">'+'</FONT>:<FONT COLOR="#A00000">writeln</FONT>(liczba1+liczba2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#C000C0">'-'</FONT>:<FONT COLOR="#A00000">writeln</FONT>(liczba1-liczba2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#C000C0">'*'</FONT>:<FONT COLOR="#A00000">writeln</FONT>(liczba1*liczba2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#C000C0">'/'</FONT>:<FONT COLOR="#A00000">writeln</FONT>(liczba1/liczba2);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>else</B></FONT>&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#A00000">writeln</FONT>(<FONT COLOR="#C000C0">'Nieznana&nbsp;operacja:'</FONT>,c);&nbsp;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>end</B></FONT>;&nbsp;<br>
+&nbsp;&nbsp;<FONT COLOR="#0000C0"><B>until</B></FONT>&nbsp;<FONT COLOR="#A00000">false</FONT>;&nbsp;<br>
+<FONT COLOR="#0000C0"><B>end</B></FONT>.<br>
+</FONT>
+</BODY>
+</HTML>
