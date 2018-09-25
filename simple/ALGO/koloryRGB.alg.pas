@@ -1,6 +1,6 @@
 Program KoloryRGB; 
-{Proste zastosowanie kodowania kolorów
- - w takiej postaci dzia³a TYLKO w ALGO} 
+{Proste zastosowanie kodowania kolorÃ³w
+ - w takiej postaci dziaÂ³a TYLKO w ALGO} 
 const 
    maxintensity=255; 
 var 
