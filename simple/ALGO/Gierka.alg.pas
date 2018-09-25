@@ -1,4 +1,4 @@
-Program BerekMyszyZKlawiatur¹; 
+Program BerekMyszyZKlawiaturÄ…; 
 {Prosta gra w berka - jeden gracz steruje uciekinierem 
 - strzalkami drugi berkiem za pomoca klikniec myszy}
 const 
@@ -15,9 +15,9 @@ const
 type 
    gracz=record 
         x,y:real; 
-        {Po³o¿enie} 
+        {PoÅ‚oÅ¼enie} 
         vx,vy:real; 
-        {Prêdkoœæ} 
+        {PrÄ™dkoÅ›Ä‡} 
         r,g,b:integer; 
         {kolor}
    end; 
@@ -105,9 +105,9 @@ begin
       sign:=0; 
 end; 
 
-procedure Obs³ugaZdarzeñ(var uciek,pogon:gracz); 
-{Obsluguje sterowanie za pomoc¹ zdarzeñ}
-Var 
+procedure ObsÅ‚ugaZdarzeÅ„(var uciek,pogon:gracz); 
+{Obsluguje sterowanie za pomocÄ… zdarzeÅ„}
+o pVar 
    typ_zdarzenia, x, y,oldx,oldy: integer; 
 Begin 
   while IsEvent do
@@ -142,13 +142,13 @@ Begin
 end; 
 
 function koniec(var uciek,pogon:gracz):boolean; 
-{Sprawdza czy uciekinier nie zosta³ z³apany}
+{Sprawdza czy uciekinier nie zostaÅ‚ zÅ‚apany}
 begin 
   koniec:=(sqr(uciek.x-pogon.x)+sqr(uciek.y-pogon.y))<sqr(2*R); 
 end; 
 
 procedure GameOver(wynik:integer;var uciek,pogon:gracz); 
-{Procedurka efektów specjalnych konca gry}
+{Procedurka efektÃ³w specjalnych konca gry}
 var 
    x,y,r:integer; 
 begin 
@@ -160,15 +160,15 @@ begin
   repeat 
     pen(1,random(255),random(255),random(255)); 
     ellipse(x-r,y-r,x+r,y+r); 
-    r:=r+1; 
+    r:=r+1; o p
   until ((r>500)and(IsEvent))or(r>2000); 
   TextColor(random(255),random(255),random(255));
   Font(15,0,60);
   MoveTo(10,y);
-  write('Uciekinier przetrwa³ ',wynik,' dziêsi¹tych sekundy');
+  write('Uciekinier przetrwaÅ‚ ',wynik,' dziÄ™siÄ…tych sekundy');
 end; 
 
-{G³ówne zmienne programu}
+{GÅ‚Ã³wne zmienne programu}
 var 
    uciekacz,poganiacz:gracz; 
    wynik:integer; 
@@ -176,8 +176,8 @@ var
 begin 
   moveto(0,MaxY+40);   
   writeln('Zasady gry:');
-  writeln('Czerwony uciekinier sterowany strzalkami musi jak najd³u¿ej ');
-  writeln('wymykaæ siê niebieskiemu zaganiaczowi sterowanemu myszk¹.');
+  writeln('Czerwony uciekinier sterowany strzalkami musi jak najdÅ‚uÅ¼ej ');
+  writeln('wymykaÄ‡ siÄ™ niebieskiemu zaganiaczowi sterowanemu myszkÄ….');
   wynik:=0; 
   InicjujGracza(uciekacz,50,50,255,0,0); 
   InicjujGracza(poganiacz,MaxX-50,MaxY-50,0,255,255); 
@@ -185,7 +185,7 @@ begin
   GraczWchodzi(uciekacz); 
   GraczWchodzi(poganiacz); 
   repeat 
-    Obs³ugaZdarzeñ(uciekacz,poganiacz); 
+    ObsÅ‚ugaZdarzeÅ„(uciekacz,poganiacz); 
     GraczZnika(uciekacz); 
     RuchGracza(uciekacz); 
     GraczWchodzi(uciekacz); 
