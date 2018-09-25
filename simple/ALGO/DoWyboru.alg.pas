@@ -2,7 +2,7 @@ Program DoWyboru;
 var 
    x:integer; 
 Begin 
-  writeln('Podaj liczbê od 1 do 5!'); 
+  writeln('Podaj liczbÄ™ od 1 do 5!'); 
   readln(x); 
   Case x of 
     1: 
@@ -14,8 +14,8 @@ Begin
     4: 
       writeln('4 programy'); 
     5: 
-      writeln('5 programów '); 
+      writeln('5 programÃ³w '); 
   else 
-    writeln('Mia³o byæ od 1 do 5!!!'); 
+    writeln('MiaÅ‚o byÄ‡ od 1 do 5!!!'); 
   end; 
 end.
