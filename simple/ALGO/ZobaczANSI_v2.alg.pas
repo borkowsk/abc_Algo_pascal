@@ -1,5 +1,5 @@
 Program ZobaczANSI; 
-{Kody znaków z pliku tekstowego na konsole} 
+{Kody znakÃ³w z pliku tekstowego na konsole} 
 
 var 
    plik:text; 
@@ -7,7 +7,7 @@ var
    nazwa:string; 
 
 Begin 
-  writeln('Podaj nazwê pliku do wypisania:'); 
+  writeln('Podaj nazwÃª pliku do wypisania:'); 
   readln(nazwa); 
   Assign(plik,nazwa); 
   Reset(plik); 
