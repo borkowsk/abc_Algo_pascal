@@ -7,4 +7,10 @@ In Poland it was distributed by OEIIZK: https://algo.oeiizk.waw.pl/
 
 But I'm not sure that this is still available anywhere :-D
 
+**Licencing**
+
+You can use this software freely for educational and research purposes, but if you feel that it would be appropriate to repay somehow, please finance me a big coffee :-)
+
+https://www.paypal.com/paypalme/wborkowsk
+
 
