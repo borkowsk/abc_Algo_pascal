@@ -28,11 +28,19 @@ void addPseudocode(const string& line) {
 %token <ival> INTEGER_LITERAL
 %token <dval> REAL_LITERAL
 %token <sval> STRING_LITERAL IDENTIFIER BOOLEAN_LITERAL
+%token <string_val> IDENTIFIER INTEGER_LITERAL REAL_LITERAL STRING_LITERAL
 
-%token PROGRAM VAR BEGIN END IF THEN ELSE WHILE DO FOR TO DOWNTO READLN WRITELN
+%token PROGRAM VAR BEGIN END IF THEN ELSE WHILE DO FOR TO DOWNTO READLN WRITELN SEMICOLON COLON ASSIGN COMMA LPAREN RPAREN
 %token INTEGER_TYPE REAL_TYPE STRING_TYPE BOOLEAN_TYPE
 %token ASSIGN EQUAL NOT_EQUAL LESS_THAN GREATER_THAN LESS_EQUAL GREATER_EQUAL
 %token PLUS MINUS MULTIPLY DIVIDE LPAREN RPAREN LBRACKET RBRACKET SEMICOLON COLON COMMA DOT
+
+
+%type <type_enum> type_specifier              // Jeśli masz wyliczenie dla typów
+%type <string> identifier_list var_declarations statement assignment_statement if_statement while_statement for_statement readln_statement writeln_statement compound_statement
+%type <vector_of_strings_ptr> statement_list  // Jeśli statement_list przechowuje wskaźnik do wektora stringów
+%type <expression_ptr> expression term factor // Jeśli masz reprezentację dla wyrażeń
+                                              // ... i inne symbole nieterminalne
 
 %%
 
@@ -126,10 +134,13 @@ while_statement: WHILE condition DO statement
                  { $$ = "DOPÓKI " + $2 + " WYKONAJ\n  " + $4; }
                ;
 
-for_statement: FOR IDENTIFIER ASSIGN initial_value (TO | DOWNTO) final_value DO statement
+for_statement: FOR IDENTIFIER ASSIGN expression TO expression DO statement
                {
-                   string direction = ($5 == TO) ? "DO" : "OD";
-                   $$ = "DLA " + string($2) + " := " + $4 + " " + direction + " " + $6 + " WYKONAJ\n  " + $8;
+                   $$ = "DLA " + string($2) + " := " + $4 + " DO " + $6 + " WYKONAJ\n  " + $8;
+               }
+             | FOR IDENTIFIER ASSIGN expression DOWNTO expression DO statement
+               {
+                   $$ = "DLA " + string($2) + " := " + $4 + " OD " + $6 + " WYKONAJ\n  " + $8;
                }
              ;
 
