@@ -1,0 +1,5 @@
+PROGRAM simple;
+VAR a: INTEGER;
+BEGIN
+END.
+

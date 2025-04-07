@@ -72,48 +72,72 @@
   }
 */
 var pascal = (function(){
-var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,10],$V1=[2,5],$V2=[1,11],$V3=[1,19],$V4=[1,20],$V5=[6,12],$V6=[6,12,18];
+var o=function(k,v,o,l){for(o=o||{},l=k.length;l--;o[k[l]]=v);return o},$V0=[1,12],$V1=[1,16],$V2=[2,17],$V3=[1,17],$V4=[6,17],$V5=[15,20],$V6=[1,36],$V7=[1,37],$V8=[6,31],$V9=[6,19];
 var parser = {trace: function trace () { },
 yy: {},
-symbols_: {"error":2,"Program":3,"PROGRAM":4,"IDENTIFIER":5,"SEMICOLON":6,"Block":7,"DOT":8,"EOF":9,"BEGIN":10,"StatementList":11,"END":12,"Statement":13,"ASSIGN":14,"Expression":15,"WRITELN":16,"LPAREN":17,"RPAREN":18,"NUMBER":19,"$accept":0,"$end":1},
-terminals_: {2:"error",4:"PROGRAM",5:"IDENTIFIER",6:"SEMICOLON",8:"DOT",9:"EOF",10:"BEGIN",12:"END",14:"ASSIGN",16:"WRITELN",17:"LPAREN",18:"RPAREN",19:"NUMBER"},
-productions_: [0,[3,6],[7,3],[11,3],[11,1],[11,0],[13,3],[13,4],[15,1],[15,1]],
+symbols_: {"error":2,"Program":3,"PROGRAM":4,"IDENTIFIER":5,"SEMICOLON":6,"Declarations":7,"Block":8,"DOT":9,"EOF":10,"VAR":11,"VarDeclarations":12,"VarDeclaration":13,"IdentifierList":14,"COLON":15,"TypeSpecifier":16,"BEGIN":17,"StatementList":18,"END":19,"COMMA":20,"INTEGER_TYPE":21,"REAL_TYPE":22,"BOOL_TYPE":23,"STRING_TYPE":24,"CHAR_TYPE":25,"Statement":26,"ASSIGN":27,"Expression":28,"WRITELN":29,"LPAREN":30,"RPAREN":31,"NUMBER":32,"$accept":0,"$end":1},
+terminals_: {2:"error",4:"PROGRAM",5:"IDENTIFIER",6:"SEMICOLON",9:"DOT",10:"EOF",11:"VAR",15:"COLON",17:"BEGIN",19:"END",20:"COMMA",21:"INTEGER_TYPE",22:"REAL_TYPE",23:"BOOL_TYPE",24:"STRING_TYPE",25:"CHAR_TYPE",27:"ASSIGN",29:"WRITELN",30:"LPAREN",31:"RPAREN",32:"NUMBER"},
+productions_: [0,[3,7],[7,2],[7,0],[12,1],[12,3],[13,4],[8,3],[14,1],[14,3],[16,1],[16,1],[16,1],[16,1],[16,1],[18,3],[18,1],[18,0],[26,4],[26,5],[28,1],[28,1]],
 performAction: function anonymous(yytext, yyleng, yylineno, yy, yystate /* action[1] */, $$ /* vstack */, _$ /* lstack */) {
 /* this == yyval */
 
 var $0 = $$.length - 1;
 switch (yystate) {
 case 1:
- return $$[$0-2]; 
+ this.$ = { type: 'program', id: $$[$0-5], declarations: $$[$0-3], body: $$[$0-2] }; 
 break;
 case 2:
- return $$[$0-1]; 
+ this.$ = $$[$0]; 
 break;
-case 3:
- this.$ = [$$[$0-2]].concat($$[$0] || []); 
-break;
-case 4:
- this.$ = [$$[$0]]; 
-break;
-case 5:
+case 3: case 17:
  this.$ = []; 
 break;
+case 4: case 8: case 16:
+ this.$ = [$$[$0]]; 
+break;
+case 5: case 9:
+ this.$ = $$[$0-2].concat($$[$0]); 
+break;
 case 6:
- this.$ = { type: 'assignment', id: $$[$0-2], expr: $$[$0] }; 
+ this.$ = { type: 'variable_declaration', identifiers: $$[$0-3], variableType: $$[$0-1] }; 
 break;
 case 7:
- this.$ = { type: 'writeln', expr: $$[$0-1] }; 
+ this.$ = { type: 'block', statements: $$[$0-1] }; 
 break;
-case 8:
+case 10:
+ this.$ = 'INTEGER'; 
+break;
+case 11:
+ this.$ = 'REAL'; 
+break;
+case 12:
+ this.$ = 'BOOLEAN'; 
+break;
+case 13:
+ this.$ = 'STRING'; 
+break;
+case 14:
+ this.$ = 'CHAR'; 
+break;
+case 15:
+ this.$ = [$$[$0-2]].concat($$[$0] || []); 
+break;
+case 18:
+ this.$ = { type: 'assignment', id: $$[$0-3], expr: $$[$0-1] }; 
+break;
+case 19:
+ this.$ = { type: 'writeln', expr: $$[$0-2] }; 
+break;
+case 20:
  this.$ = { type: 'identifier', value: $$[$0] }; 
 break;
-case 9:
+case 21:
  this.$ = { type: 'number', value: Number($$[$0]) }; 
 break;
 }
 },
-table: [{3:1,4:[1,2]},{1:[3]},{5:[1,3]},{6:[1,4]},{7:5,10:[1,6]},{8:[1,7]},{5:$V0,11:8,12:$V1,13:9,16:$V2},{9:[1,12]},{12:[1,13]},{6:[1,14],12:[2,4]},{14:[1,15]},{17:[1,16]},{1:[2,1]},{8:[2,2]},{5:$V0,11:17,12:$V1,13:9,16:$V2},{5:$V3,15:18,19:$V4},{5:$V3,15:21,19:$V4},{12:[2,3]},o($V5,[2,6]),o($V6,[2,8]),o($V6,[2,9]),{18:[1,22]},o($V5,[2,7])],
-defaultActions: {12:[2,1],13:[2,2],17:[2,3]},
+table: [{3:1,4:[1,2]},{1:[3]},{5:[1,3]},{6:[1,4]},{7:5,11:[1,6],17:[2,3]},{8:7,17:[1,8]},{5:$V0,12:9,13:10,14:11},{9:[1,13]},{5:$V1,18:14,19:$V2,26:15,29:$V3},{6:[1,18],17:[2,2]},o($V4,[2,4]),{15:[1,19],20:[1,20]},o($V5,[2,8]),{10:[1,21]},{19:[1,22]},{6:[1,23],19:[2,16]},{27:[1,24]},{30:[1,25]},{5:$V0,13:26,14:11},{16:27,21:[1,28],22:[1,29],23:[1,30],24:[1,31],25:[1,32]},{5:[1,33]},{1:[2,1]},{9:[2,7]},{5:$V1,18:34,19:$V2,26:15,29:$V3},{5:$V6,28:35,32:$V7},{5:$V6,28:38,32:$V7},o($V4,[2,5]),{6:[1,39]},{6:[2,10]},{6:[2,11]},{6:[2,12]},{6:[2,13]},{6:[2,14]},o($V5,[2,9]),{19:[2,15]},{6:[1,40]},o($V8,[2,20]),o($V8,[2,21]),{31:[1,41]},o($V4,[2,6]),o($V9,[2,18]),{6:[1,42]},o($V9,[2,19])],
+defaultActions: {21:[2,1],22:[2,7],28:[2,10],29:[2,11],30:[2,12],31:[2,13],32:[2,14],34:[2,15]},
 parseError: function parseError (str, hash) {
     if (hash.recoverable) {
         this.trace(str);
@@ -598,32 +622,46 @@ case 0:/* skip whitespace */
 break;
 case 1:return 4
 break;
-case 2:return 10
+case 2:return 11
 break;
-case 3:return 12
+case 3:return 21
 break;
-case 4:return 16
+case 4:return 22
 break;
-case 5:return 17
+case 5:return 23
 break;
-case 6:return 18
+case 6:return 24
 break;
-case 7:return 8
+case 7:return 25
 break;
-case 8:return 14
+case 8:return 17
 break;
-case 9:return 6
+case 9:return 19
 break;
-case 10:return 19
+case 10:return 29
 break;
-case 11:return 5
+case 11:return 30
 break;
-case 12:return 9
+case 12:return 31
+break;
+case 13:return 9
+break;
+case 14:return 27
+break;
+case 15:return 15
+break;
+case 16:return 6
+break;
+case 17:return 32
+break;
+case 18:return 5
+break;
+case 19:return 10
 break;
 }
 },
-rules: [/^(?:\s+)/,/^(?:PROGRAM\b)/,/^(?:BEGIN\b)/,/^(?:END\b)/,/^(?:WRITELN\b)/,/^(?:\()/,/^(?:\))/,/^(?:\.)/,/^(?::=)/,/^(?:;)/,/^(?:[0-9]+)/,/^(?:[a-zA-Z_][a-zA-Z0-9_]*)/,/^(?:$)/],
-conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12],"inclusive":true}}
+rules: [/^(?:\s+)/,/^(?:PROGRAM\b)/,/^(?:VAR\b)/,/^(?:INTEGER\b)/,/^(?:REAL\b)/,/^(?:BOOLEAN\b)/,/^(?:STRING\b)/,/^(?:CHAR\b)/,/^(?:BEGIN\b)/,/^(?:END\b)/,/^(?:WRITELN\b)/,/^(?:\()/,/^(?:\))/,/^(?:\.)/,/^(?::=)/,/^(?::)/,/^(?:;)/,/^(?:[0-9]+)/,/^(?:[a-zA-Z_][a-zA-Z0-9_]*)/,/^(?:$)/],
+conditions: {"INITIAL":{"rules":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19],"inclusive":true}}
 });
 return lexer;
 })();
